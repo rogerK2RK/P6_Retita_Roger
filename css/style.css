@@ -42,9 +42,40 @@ h1 {
 .photographer_section article h2 {
     color: #D3573C;
     font-size: 36px;
+    margin-bottom: 0px;
+    margin: 20px 0px;
+    font-weight: normal;
 }
 
 .photographer_section article img {
     height: 200px;
     width: 200px;
+    background-color: #901C1C;
+}
+
+.sectionPhotographer{
+    margin: 100px;
+}
+
+.sectionPhotographer article{
+    width: 200px;
+}
+
+.align-center{
+    text-align: center;
+}
+
+.sectionPhotographer article h2{
+    color: #D3573C;
+    font-size: 36px;
+}
+
+.haider-article{
+    text-decoration: none;
+}
+
+.image-photographer{
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
 }
