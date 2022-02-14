@@ -4,8 +4,30 @@
 
 .photograph-header {
     background-color: #FAFAFA;
-    height: 300px;
+    height: 270px;
+    padding: 0px 30px;
     margin: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.name-photographe{
+    color: #D3573C;
+    font-weight: normal;
+    font-size: 3.1em;
+    padding-left: 5px;
+    margin-bottom: 15px;
+}
+
+.ville-photographer{
+    text-align: left;
+    color: #901C1C;
+}
+
+.description-page-photographer{
+    text-align: left;
 }
 
 .contact_button {
@@ -21,6 +43,14 @@
     cursor: pointer;
 }
 
+.photographe-page-section{
+    margin: 20px 0 0 100px ;
+}
+
+.text-trie{
+    font-weight: bold;
+}
+
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
@@ -31,6 +61,71 @@
     justify-content: space-between;
     padding: 35px;
     margin: auto;
+}
+
+select{
+    border-radius: 5px;
+    height: 35px;
+    width: 120px;
+    padding-left: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #901C1C;
+}
+
+.container-article-photo{
+    margin-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.photo-box{
+    width: 250px;
+}
+
+.box-article{
+    width: 27%;
+    margin-bottom: 25px;
+}
+
+.photo{
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.description-photo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-photo{
+    margin: 10px 0; 
+    color: #901C1C;
+}
+
+.notif-photo{
+    display: flex;
+    text-align: center;
+    width: 15%;
+    position: relative;
+}
+
+.likes-photo{
+    margin: 10px 0;
+    color: #901C1C;
+}
+
+.far.heart-picto{
+    position: absolute;
+    top: 3px;
+    right: 4px;
+    font-weight: 900;
+    color: #901C1C;
+    padding: 10px 0px;
+    font-size: 15px;
 }
 
 .modal header {
@@ -73,4 +168,8 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+}
+
+#modal-photo{
+    display: none;
 }
