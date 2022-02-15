@@ -1,23 +1,23 @@
-    async function getPhotographers() {
-        // Penser à remplacer par les données récupérées dans le json
-        
-        let photographers = '../../data/photographers.json';
-        fetch(photographers)
-        .then(function(photographers) {
-            if (photographers.ok){
-                return photographers.json();
-            }
-        })
-        .then(function(data) {
-            let photographe = data.photographers;
-            console.log(photographe);
-        })
-        .catch(function(err) {
-            console.log(err);
-         });
-     // et bien retourner le tableau photographers seulement une fois
-     return ({
-        photographers: [...photographers]})
+async function getPhotographers() {
+    // Penser à remplacer par les données récupérées dans le json
+    
+    let photographers = '../../data/photographers.json';
+    fetch(photographers)
+    .then(function(photographers) {
+        if (photographers.ok){
+            return photographers.json();
+        }
+    })
+    .then(function(data) {
+        let photographe = data.photographers;
+        console.log(photographe);
+        for(let user of photographe){
+            console.log(`${user.name}`);
+        }
+    })
+    .catch(function(err) {
+        console.log(err);
+        });
 }
 
 getPhotographers();
