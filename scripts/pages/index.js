@@ -1,7 +1,9 @@
 async function getPhotographers() {
     // Penser à remplacer par les données récupérées dans le json
     
-    let url = 'http://localhost/data/data.json';
+    // let url = 'http://localhost/data/data.json';
+    let photographers = 'http://localhost/P6_Retita_Roger/data/photographers.json';
+    let url = '../../data/photographers.json';
     fetch(url)
     .then(function(reponse) {
         if (reponse.ok){
@@ -16,9 +18,10 @@ async function getPhotographers() {
     .catch(function(err) {
         console.log(err);
     });
+    return 
 }
 
-getPhotographers();
+// getPhotographers();
 async function displayData(photographers) {
     const photographersSection = document.querySelector(".photographer_section");
 
