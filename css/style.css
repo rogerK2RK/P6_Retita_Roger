@@ -38,6 +38,7 @@ h1 {
 .photographer_section article {
     justify-self: center;
     display: flex;
+    width: 27%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -47,17 +48,36 @@ h1 {
     color: #D3573C;
     font-size: 36px;
     margin-bottom: 0px;
+    font-weight: normal;
     
 }
 
 .photographer_section article img {
     height: 200px;
     width: 200px;
+    object-fit: cover;
     background-color: #901C1C;
+    border-radius: 100px;
+    box-shadow:  5px 5px 10px #cfcfcf,
+             -5px -5px 10px #ffffff;
 }
 
+.ville{
+    color: #901C1C;
+    margin: 0px;
 
+}
 
+.description{
+    margin: 5px 0px;
+    font-size: 14px;
+}
+
+.tarif{
+    font-size: 10px;
+    color: gray;
+    margin: 0px;
+}
 
 
 /***
@@ -66,12 +86,7 @@ h1 {
 
 ****/
 /*
-.sectionPhotographer{
-    margin: 100px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
+
 
 .sectionPhotographer article{
     width: 27%;
@@ -85,14 +100,6 @@ a.link-haider-article{
     width: 200px;
 }
 
-.image-photographer{
-    height: 200px;
-    width: 200px;
-    border-radius: 100px;
-    box-shadow:  5px 5px 10px #cfcfcf,
-             -5px -5px 10px #ffffff;
-}
-
 .sectionPhotographer article h2{
     color: #D3573C;
     font-size: 36px;
@@ -100,20 +107,5 @@ a.link-haider-article{
     font-weight: normal;
 }
 
-.ville{
-    color: #D3573C;
-    margin: 0px;
 
-}
-
-.description{
-    margin: 2px 0px;
-    font-size: 10px;
-}
-
-.tarif{
-    font-size: 10px;
-    color: gray;
-    margin: 0px;
-}
 */
