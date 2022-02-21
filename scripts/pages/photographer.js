@@ -12,7 +12,7 @@ async function getPhotographer(idrecuperedelurl) {
 
     // je filtre les photographe pour ne récupérer que celui avec le bon id
     dataPhotograph.photographer = dataPhotograph.photographers.filter((photographer) => photographer.id == idrecuperedelurl)[0];
-    dataPhotograph.media = dataPhotograph.media.filter((media) => media.photographerId == idrecuperedelurl)[0];
+    dataPhotograph.media = dataPhotograph.media.filter((media) => media.photographerId == idrecuperedelurl);
 
     console.log(dataPhotograph)
     return dataPhotograph;
