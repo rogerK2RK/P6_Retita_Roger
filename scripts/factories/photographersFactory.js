@@ -1,12 +1,14 @@
 function photographersFactory(photographer) {
-    const { name, portrait, city, country, tagline, price } = photographer;
+    const { name, portrait, city, country, tagline, price, id } = photographer;
 
     const picture = `assets/photographers/Photographers ID Photos/${portrait}`;
 
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
         const link = document.createElement( 'a' );
-        link.href = "photographer.html";
+        link.href = "photographer.html?q=URLUtils.searchParams&id="+id;
+        link.id = id;
+        link.className ="link";
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);
         const h2 = document.createElement( 'h2' );
@@ -26,9 +28,15 @@ function photographersFactory(photographer) {
         link.appendChild(location);
         link.appendChild(description);
         link.appendChild(prix);
+            // On récupère l'élément sur lequel on veut détecter le clic
+        link.addEventListener('click', function(e) {          // On écoute l'événement click
+            console.log(id);               // On change le contenu de notre élément pour afficher "C'est cliqué !"
+        });
+
 
         return (article);
     }
     
     return { name, picture, getUserCardDOM }
 }
+

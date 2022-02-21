@@ -1,7 +1,8 @@
-function photographerFactory(photographer) {
+function photographerFactory(photographer, media) {
     const { name, portrait, city, country, tagline } = photographer;
-
+    const {image, title, likes } = media;
     const picture = `assets/photographers/Photographers ID Photos/${portrait}`;
+    const imagePhoto = `assets/photographers/${image}`;
 
     function getUserCardDOM() {
         const sectionHeadPhotographe = document.createElement( 'section' );
@@ -30,8 +31,9 @@ function photographerFactory(photographer) {
         sectionHeadPhotographe.appendChild(bouton);
         sectionHeadPhotographe.appendChild(img);
 
+
         return (sectionHeadPhotographe);
     }
-    
     return { name, picture, getUserCardDOM }
 }
+
