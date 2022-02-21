@@ -5,6 +5,8 @@ function photographerFactory(photographer, media) {
     const imagePhoto = `assets/photographers/${image}`;
 
     function getUserCardDOM() {
+        const sectionPhotographe = document.createElement( 'div' );
+
         const sectionHeadPhotographe = document.createElement( 'section' );
         sectionHeadPhotographe.className = "photograph-header";
         const contentHeadPhotographe = document.createElement('div');
@@ -24,6 +26,15 @@ function photographerFactory(photographer, media) {
         bouton.className ="contact_button"
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);
+
+        const sectionMainPhotographe = document.createElement( 'article');
+        const image = document.createElement( 'img' );
+        image.setAttribute("src", image);
+
+        sectionMainPhotographe.appendChild(image)
+
+
+        sectionPhotographe.appendChild(sectionHeadPhotographe);
         sectionHeadPhotographe.appendChild(contentHeadPhotographe);
         contentHeadPhotographe.appendChild(h1);
         contentHeadPhotographe.appendChild(location);
@@ -32,8 +43,8 @@ function photographerFactory(photographer, media) {
         sectionHeadPhotographe.appendChild(img);
 
 
-        return (sectionHeadPhotographe);
+        return (sectionPhotographe);
     }
-    return { name, picture, getUserCardDOM }
+    return { name, picture,imagePhoto, getUserCardDOM }
 }
 
