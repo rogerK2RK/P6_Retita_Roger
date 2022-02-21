@@ -27,13 +27,8 @@ function photographerFactory(photographer, media) {
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);
 
-        const sectionMainPhotographe = document.createElement( 'article');
-        const image = document.createElement( 'img' );
-        image.setAttribute("src", image);
-
-        sectionMainPhotographe.appendChild(image)
-
-
+        
+        
         sectionPhotographe.appendChild(sectionHeadPhotographe);
         sectionHeadPhotographe.appendChild(contentHeadPhotographe);
         contentHeadPhotographe.appendChild(h1);
@@ -45,6 +40,6 @@ function photographerFactory(photographer, media) {
 
         return (sectionPhotographe);
     }
-    return { name, picture,imagePhoto, getUserCardDOM }
+    return { name, picture, getUserCardDOM }
 }
 
