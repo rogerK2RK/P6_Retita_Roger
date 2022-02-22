@@ -21,20 +21,28 @@ async function getPhotographer(idrecuperedelurl) {
 
 
 
-async function displayData(photographer, media) {
-        const photographerModel = photographerFactory(photographer, media);
+async function displayPhotographerInfo(photographer/*, media*/) {
+        const photographerModel = photographerFactory(photographer/*, media*/);
         const userCardDOM = photographerModel.getUserCardDOM();
         document.querySelector(".photographe_page-content").appendChild(userCardDOM);
 };
+async function displayMedias(media){
+    media.forEach((media) => {
+        const photographerMedia = photographerMediasFactory(media);
+        const userCardDOMMedia = photographerMedia.getUserCardDOMMedia();
+        document.querySelector(".photographe_page_photo-content").appendChild(userCardDOMMedia);
+    });
+
+}
 
 async function init() {
     // Récupère les datas des photographes
-    
     let searchParams = new URLSearchParams(window.location.href);
     let id = searchParams.get('id');
     console.log(id);
     const { photographer, media } = await getPhotographer(id);
-    displayData(photographer, media);
+    displayPhotographerInfo(photographer);
+    displayMedias(media);
     // console.log(photographers)
 
 };

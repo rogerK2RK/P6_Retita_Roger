@@ -1,11 +1,8 @@
-function photographerFactory(photographer, media) {
+function photographerFactory(photographer/*, media*/) {
     const { name, portrait, city, country, tagline } = photographer;
-    const {image, title, likes } = media;
     const picture = `assets/photographers/Photographers ID Photos/${portrait}`;
-    const imagePhoto = `assets/photographers/${image}`;
 
     function getUserCardDOM() {
-        const sectionPhotographe = document.createElement( 'div' );
 
         const sectionHeadPhotographe = document.createElement( 'section' );
         sectionHeadPhotographe.className = "photograph-header";
@@ -27,9 +24,6 @@ function photographerFactory(photographer, media) {
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);
 
-        
-        
-        sectionPhotographe.appendChild(sectionHeadPhotographe);
         sectionHeadPhotographe.appendChild(contentHeadPhotographe);
         contentHeadPhotographe.appendChild(h1);
         contentHeadPhotographe.appendChild(location);
@@ -38,7 +32,8 @@ function photographerFactory(photographer, media) {
         sectionHeadPhotographe.appendChild(img);
 
 
-        return (sectionPhotographe);
+
+        return (sectionHeadPhotographe);
     }
     return { name, picture, getUserCardDOM }
 }
