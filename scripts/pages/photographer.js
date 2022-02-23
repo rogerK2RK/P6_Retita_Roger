@@ -26,9 +26,9 @@ async function displayPhotographerInfo(photographer/*, media*/) {
         const userCardDOM = photographerModel.getUserCardDOM();
         document.querySelector(".photographe_page-content").appendChild(userCardDOM);
 };
-async function displayMedias(media){
-    media.forEach((media) => {
-        const photographerMedia = photographerMediasFactory(media);
+async function displayMedias(photographer, media){
+    media.forEach((photographer, media) => {
+        const photographerMedia = photographerMediasFactory(photographer, media);
         const userCardDOMMedia = photographerMedia.getUserCardDOMMedia();
         document.querySelector(".photographe_page_photo-content").appendChild(userCardDOMMedia);
     });
@@ -42,7 +42,7 @@ async function init() {
     console.log(id);
     const { photographer, media } = await getPhotographer(id);
     displayPhotographerInfo(photographer);
-    displayMedias(media);
+    displayMedias(photographer, media);
     // console.log(photographers)
 
 };

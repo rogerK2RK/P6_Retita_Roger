@@ -7,8 +7,14 @@ function photographerMediasFactory(media){
         article.className = "photo-box";
         
         // console.log({media});
-        
-        const pht = document.createElement( 'img' );
+        // if((/\.(gif|jpg|jpeg|tiff|png)$/i).test(filename)){
+        //     console.log("jpg ");
+        //     const pht = document.createElement( 'img' );
+        // }else{
+        //     console.log("video");
+        //     const pht = document.createElement( 'img' );
+        // }
+        const pht = document.createElement( 'img' )
         pht.setAttribute("src", imagePhoto);
         pht.className = "photo";
         const boxeContent = document.createElement( 'div' );
