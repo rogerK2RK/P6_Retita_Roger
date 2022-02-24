@@ -24,6 +24,11 @@ function photographerFactory(photographer/*, media*/) {
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);
 
+        const modalForm = document.getElementById("contact_modal");
+        bouton.addEventListener("click", function(e){
+            modalForm.style.display = "block";
+        })
+
         sectionHeadPhotographe.appendChild(contentHeadPhotographe);
         contentHeadPhotographe.appendChild(h1);
         contentHeadPhotographe.appendChild(location);

@@ -5,6 +5,10 @@ function photographerMediasFactory(media){
     function getUserCardDOMMedia(){
         const article = document.createElement( 'article' );
         article.className = "photo-box";
+        const modalPhoto = document.querySelector(".lightbox-modal");
+        article.addEventListener("click", function(e){
+            modalPhoto.style.display = "block";
+        });
         
         // console.log({media});
         // if((/\.(gif|jpg|jpeg|tiff|png)$/i).test(filename)){
@@ -41,9 +45,34 @@ function photographerMediasFactory(media){
 
 
 
-
-
         return (article);
     }
     return { image, title, likes, getUserCardDOMMedia }
 }
+
+function onePhotoFactory(media) {
+    const { image, title, likes  } = media;
+    const imagePhoto = `assets/photographers/Media/${image}`;
+
+    function getUserPhoto(){
+
+        const article = document.createElement( 'article' );
+        article.className = "content";
+        
+        const pht = document.createElement( 'img' )
+        pht.setAttribute("src", imagePhoto);
+        pht.className = "photo-modal";
+        const titre = document.createElement( 'p' );
+        titre.textContent = `${title}`;
+        titre.className = "titlePhoto";
+
+        article.appendChild(pht);
+        article.appendChild(titre);
+
+
+
+        return (article);
+    }
+    return { image, title, likes, getUserPhoto }
+}
+

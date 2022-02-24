@@ -34,6 +34,11 @@ async function displayMedias(photographer, media){
     });
 
 }
+async function displayMediasOnePhoto(media){
+    const photographerOnePhoto = onePhotoFactory(media);
+    const userCardDOMPhoto = photographerOnePhoto.getUserPhoto();
+    document.querySelector(".lightbox-modal").appendChild(userCardDOMPhoto);
+}
 
 async function init() {
     // Récupère les datas des photographes
@@ -43,6 +48,7 @@ async function init() {
     const { photographer, media } = await getPhotographer(id);
     displayPhotographerInfo(photographer);
     displayMedias(photographer, media);
+    displayMediasOnePhoto(media);
     // console.log(photographers)
 
 };

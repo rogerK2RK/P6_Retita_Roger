@@ -1,5 +1,12 @@
 #contact_modal {
     display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
 }
 
 .photograph-header {
@@ -65,7 +72,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 35px;
-    margin: auto;
+    position: relative;
+    margin: 5% auto;
 }
 
 select{
@@ -170,4 +178,29 @@ form input {
 
 #modal-photo{
     display: none;
+}
+
+.lightbox-modal{
+    display: flex;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    
+}
+.content{
+    margin: 5% auto;
+    justify-content: center;
+    display: flex;
+    height: 100%;
+    width: 85%;
+    border: 2px solid #901C1C;
+}
+.photo-modal{
+    height: 85%;
+    width: 70%;
 }
