@@ -1,40 +1,36 @@
-async function getPhotographer(idrecuperedelurl) {
+async function getPhotographer() {
+
+    let searchParams = new URLSearchParams(window.location.search);
+    let id = searchParams.get('id');
     
     // je récupère tous les photographe
     let dataPhotograph = await fetch('../../data/photographers.json');
     dataPhotograph = await dataPhotograph.json();
     
-    
-   
-    // filtrer les données du JSON avec une fonction filter : 
-
-
-
     // je filtre les photographe pour ne récupérer que celui avec le bon id
-    dataPhotograph.photographer = dataPhotograph.photographers.filter((photographer) => photographer.id == idrecuperedelurl)[0];
-    dataPhotograph.media = dataPhotograph.media.filter((media) => media.photographerId == idrecuperedelurl);
-
-    console.log(dataPhotograph)
+    dataPhotograph.photographer = dataPhotograph.photographers.filter((photographer) => photographer.id == id)[0];
+    dataPhotograph.media = dataPhotograph.media.filter((media) => media.photographerId == id);
     return dataPhotograph;
 }
-// récupérer l'id avec urlSearchParams
 
-
-
-async function displayPhotographerInfo(photographer/*, media*/) {
-        const photographerModel = photographerFactory(photographer/*, media*/);
-        const userCardDOM = photographerModel.getUserCardDOM();
-        document.querySelector(".photographe_page-content").appendChild(userCardDOM);
+function displayPhotographerInfo(photographer) {
+    const photographerModel = onePhotographerFactory(photographer);
+    const userCardDOM = photographerModel.getUserCardDOM();
+    document.querySelector(".photographe_page-content").appendChild(userCardDOM);
 };
-async function displayMedias(photographer, media){
-    media.forEach((photographer, media) => {
-        const photographerMedia = photographerMediasFactory(photographer, media);
+
+function displayMedias(media){
+    media.forEach((media) => {
+        const photographerMedia = photographerMediasFactory(media);
         const userCardDOMMedia = photographerMedia.getUserCardDOMMedia();
         document.querySelector(".photographe_page_photo-content").appendChild(userCardDOMMedia);
     });
 
 }
-async function displayMediasOnePhoto(media){
+
+// créer ici une fonction displayInfoBar qui appellera la fonction getInfoBarPhotographer de la factory onePhotographerFactory
+
+function displayMediasOnePhoto(media){
     const photographerOnePhoto = onePhotoFactory(media);
     const userCardDOMPhoto = photographerOnePhoto.getUserPhoto();
     document.querySelector(".lightbox-modal").appendChild(userCardDOMPhoto);
@@ -42,14 +38,11 @@ async function displayMediasOnePhoto(media){
 
 async function init() {
     // Récupère les datas des photographes
-    let searchParams = new URLSearchParams(window.location.href);
-    let id = searchParams.get('id');
-    console.log(id);
-    const { photographer, media } = await getPhotographer(id);
+    const { photographer, media } = await getPhotographer();
+    
     displayPhotographerInfo(photographer);
-    displayMedias(photographer, media);
+    displayMedias(media);
     displayMediasOnePhoto(media);
-    // console.log(photographers)
 
 };
 

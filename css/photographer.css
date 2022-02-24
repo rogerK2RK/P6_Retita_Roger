@@ -100,14 +100,13 @@ select{
 
 .photo{
     height: 350px;
-    width: 350px;
+    width: 100%;
     object-fit: cover;
     border-radius: 3px;
 }
 
 .description-photo{
     display: flex;
-    width: 350px;
     justify-content: space-between;
 }
 

@@ -1,4 +1,4 @@
-function photographerFactory(photographer/*, media*/) {
+function onePhotographerFactory(photographer) {
     const { name, portrait, city, country, tagline } = photographer;
     const picture = `assets/photographers/Photographers ID Photos/${portrait}`;
 
@@ -40,6 +40,9 @@ function photographerFactory(photographer/*, media*/) {
 
         return (sectionHeadPhotographe);
     }
+
+    // créer une fonction getInfoBarPhotographer
+
     return { name, picture, getUserCardDOM }
 }
 

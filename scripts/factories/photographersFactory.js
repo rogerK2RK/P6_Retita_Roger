@@ -6,7 +6,7 @@ function photographersFactory(photographer) {
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
         const link = document.createElement( 'a' );
-        link.href = "photographer.html?q=URLUtils.searchParams&id="+id;
+        link.href = "photographer.html?id="+id;
         link.id = id;
         link.className ="link";
         const img = document.createElement( 'img' );

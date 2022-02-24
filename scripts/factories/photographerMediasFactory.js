@@ -47,7 +47,8 @@ function photographerMediasFactory(media){
 
         return (article);
     }
-    return { image, title, likes, getUserCardDOMMedia }
+
+    return { getUserCardDOMMedia }
 }
 
 function onePhotoFactory(media) {
