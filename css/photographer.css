@@ -7,6 +7,7 @@
     height: 100%;
     width: 100%;
     overflow: auto;
+    background-color: rgba(158, 134, 148, 0.4);
 }
 
 body{
@@ -24,7 +25,7 @@ body{
     background-color: #FAFAFA;
     height: 270px;
     padding: 0px 30px;
-    margin: 0 100px 100px 100px;
+    margin: 0 100px 25px 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -100,7 +101,7 @@ select{
 }
 
 .photographe_page_photo-content{
-    margin: 100px;
+    margin: 25px 100px 50px 100px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -143,7 +144,6 @@ select{
 .far.heart-picto{
     font-weight: 900;
     color: #901C1C;
-    padding: 10px 0px;
     font-size: 15px;
 }
 
@@ -243,4 +243,16 @@ form input {
 }
 .contentTotalLike{
     margin-right: 5px;
+}
+
+.box-filtre{
+    display: flex;
+    margin-left: 100px;
+    align-items: center;
+    width: 14%;
+    justify-content: space-between;
+}
+
+.text-fitre{
+    font-weight: bold;
 }

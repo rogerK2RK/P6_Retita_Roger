@@ -11,13 +11,12 @@ function photographerMediasFactory(media){
         //     modalPhoto.style.display = "block";
         // });
         
+        // verifie si le media est une image ou une video
         let pht;
         if((/\.(gif|jpg|jpeg|tiff|png)$/i).test(media.image)){
-            console.log("jpg ");
             pht = document.createElement( 'img' );
             pht.setAttribute("src", imagePhoto);
         }else{
-            console.log("video");
             pht = document.createElement( 'video' );
             pht.setAttribute("src", videoPhotographer);
             // pht.play();

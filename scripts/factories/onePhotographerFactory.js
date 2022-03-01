@@ -62,7 +62,6 @@ function onePhotographerFactory(photographer, media) {
 
         const picto = document.createElement( 'i' );
         picto.className = "far fa-heart heart-picto-infobar";
-        console.log(totalLikes);
 
         const tarifPhotographer = document.createElement( "p" );
         tarifPhotographer.textContent = `${price}€ / jour`;
