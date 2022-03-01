@@ -9,6 +9,17 @@
     overflow: auto;
 }
 
+body{
+    margin: 0px;
+}
+
+.logo {
+    height: 50px;
+    margin-left: 100px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
 .photograph-header {
     background-color: #FAFAFA;
     height: 270px;
@@ -18,7 +29,8 @@
     justify-content: space-between;
     align-items: center;
 }
-.photographe_page-content section img{
+
+.photographe_page-content div img{
     height: 200px;
     width: 200px;
     object-fit: cover;
@@ -27,6 +39,7 @@
     box-shadow:  5px 5px 10px #cfcfcf,
              -5px -5px 10px #ffffff;
 }
+
 .name-photographe{
     color: #D3573C;
     font-weight: normal;
@@ -107,6 +120,7 @@ select{
 
 .description-photo{
     display: flex;
+    font-size: 1.4em;
     justify-content: space-between;
 }
 
@@ -202,4 +216,31 @@ form input {
 .photo-modal{
     height: 85%;
     width: 70%;
+}
+
+.photographe_page-infobar{
+    display: flex;
+    border-radius: 3px 3px 0px 0px;
+    background-color: #DB8876;
+    position: fixed;
+    bottom: 0px;
+    right: 80px;
+    width: 15%;
+}
+.d-flex{
+    display: flex;
+}
+.infobarBox{
+    font-size: 1.2em;
+    width: 100%;
+    justify-content: space-around;
+}
+.far.heart-picto-infobar{
+    font-weight: 900;
+    color: #000;
+    padding: 22px 0px;
+    font-size: 15px;
+}
+.contentTotalLike{
+    margin-right: 5px;
 }

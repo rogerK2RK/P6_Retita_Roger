@@ -13,22 +13,28 @@ async function getPhotographer() {
     return dataPhotograph;
 }
 
+//function qui appel onePhotographerFactory pour afficher les informations d'un photographe
 function displayPhotographerInfo(photographer) {
     const photographerModel = onePhotographerFactory(photographer);
     const userCardDOM = photographerModel.getUserCardDOM();
     document.querySelector(".photographe_page-content").appendChild(userCardDOM);
 };
 
+// function qui appel photographerMediasFactory pour afficher les photos d'un photographe
 function displayMedias(media){
     media.forEach((media) => {
         const photographerMedia = photographerMediasFactory(media);
         const userCardDOMMedia = photographerMedia.getUserCardDOMMedia();
         document.querySelector(".photographe_page_photo-content").appendChild(userCardDOMMedia);
     });
-
 }
 
 // créer ici une fonction displayInfoBar qui appellera la fonction getInfoBarPhotographer de la factory onePhotographerFactory
+function displayInfoBar(media, photographer){
+    const photographerModel = onePhotographerFactory(photographer, media);
+    const userCardDOM = photographerModel.getInfoBarPhotographer();
+    document.querySelector(".photographe_page-infobar").appendChild(userCardDOM);
+}
 
 function displayMediasOnePhoto(media){
     const photographerOnePhoto = onePhotoFactory(media);
@@ -42,6 +48,7 @@ async function init() {
     
     displayPhotographerInfo(photographer);
     displayMedias(media);
+    displayInfoBar(media, photographer);
     displayMediasOnePhoto(media);
 
 };
