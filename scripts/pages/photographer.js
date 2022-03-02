@@ -36,6 +36,29 @@ function displayInfoBar(media, photographer){
     document.querySelector(".photographe_page-infobar").appendChild(userCardDOM);
 }
 
+// trie les medias
+function triMedia(media){
+    const trieSelect = document.getElementById( "filtre" );
+    console.log(media);
+    trieSelect.addEventListener('change', function(event){
+        if( event.target.value === "Popularité" ){
+            media.sort((a, b) => {
+                return b.likes - a.likes;
+            });
+            console.log(media);
+        }else if( event.target.value === "Date" ){
+            media.sort((a, b) => {
+                return a.date - b.date;
+            });
+            console.log(media);
+            }else if( event.target.value === "Titre" ){
+                media.sort((a, b) => a.title.localeCompare(b.title));
+                displayMedias(media);
+            }
+    });
+}
+
+
 function displayMediasOnePhoto(media){
     const photographerOnePhoto = onePhotoFactory(media);
     const userCardDOMPhoto = photographerOnePhoto.getUserPhoto();
@@ -50,7 +73,7 @@ async function init() {
     displayMedias(media);
     displayInfoBar(media, photographer);
     displayMediasOnePhoto(media);
-
+    triMedia(media);
 };
 
 init();
