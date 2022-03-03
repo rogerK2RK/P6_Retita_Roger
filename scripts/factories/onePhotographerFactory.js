@@ -45,7 +45,7 @@ function onePhotographerFactory(photographer, media) {
         return (sectionHeadPhotographe);
     }
 
-    // créer une fonction getInfoBarPhotographer
+    // créer une fonction getInfoBarPhotographer qui permet de construire l'info bar de la page photographer
     function getInfoBarPhotographer(){
         const infobarBox = document.createElement( "div" );
         infobarBox.className = "d-flex infobarBox";
@@ -73,6 +73,6 @@ function onePhotographerFactory(photographer, media) {
         
         return (infobarBox);
     }
-    return { name, picture, getUserCardDOM, getInfoBarPhotographer}
+    return { getUserCardDOM, getInfoBarPhotographer}
 }
 

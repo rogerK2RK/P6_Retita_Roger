@@ -9,26 +9,34 @@
     <title>Fisheye - photographe </title>
   </head>
   <body>
+
     <header>
       <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page"/>
     </header>
+
     <main id="main">
       <!-- Information Photographer -->
       <section class="photographe_page-content"></section>
+      
       <!-- Liste déroulant -->
       <div class="box-filtre">
         <p class="text-fitre">Trier par </p>
         <select id="filtre">
-          <option>Popularité </option>
-          <option>Date</option>
-          <option>Titre</option>
+          <option value="popularite">Popularité</option>
+          <option value="date">Date</option>
+          <option value="titre">Titre</option>
         </select>
       </div>
+
       <!-- Medias du photographer -->
       <section class="photographe_page_photo-content"></section>
+
       <!-- InfoBar -->
       <section class="photographe_page-infobar"></section>
+
     </main>
+
+    <!-- La modale de contact -->
     <div class="lightbox-modal"></div>
     <div id="contact_modal">
 			<div class="modal">

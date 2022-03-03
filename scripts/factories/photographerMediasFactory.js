@@ -19,7 +19,6 @@ function photographerMediasFactory(media){
         }else{
             pht = document.createElement( 'video' );
             pht.setAttribute("src", videoPhotographer);
-            // pht.play();
         }
         
         pht.className = "photo";
@@ -39,9 +38,13 @@ function photographerMediasFactory(media){
 
         const picto = document.createElement( 'i' );
         picto.className = "far fa-heart heart-picto";
+
         // incrément du like quand on clic dessus
         picto.addEventListener("click", function(e){
             numberLikePhoto.textContent = likes+1;
+        
+            // j'ajoute également 1 au nombre dans l'infobar
+            
         });
 
         article.appendChild(pht);
