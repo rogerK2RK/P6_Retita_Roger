@@ -59,11 +59,11 @@ function triMedia(media, ordreTri) {
 }
 
 
-function displayMediasOnePhoto(media) {
-    const photographerOnePhoto = onePhotoFactory(media);
-    const userCardDOMPhoto = photographerOnePhoto.getUserPhoto();
-    document.querySelector(".lightbox-modal").appendChild(userCardDOMPhoto);
-}
+// function displayMediasOnePhoto(media) {
+//     const photographerOnePhoto = onePhotoFactory(media);
+//     const userCardDOMPhoto = photographerOnePhoto.getUserPhoto();
+//     document.querySelector(".lightbox-modal").appendChild(userCardDOMPhoto);
+// }
 
 async function init() {
     // Récupère les datas des photographes
@@ -73,7 +73,7 @@ async function init() {
     triMedia(media, "popularite");
     displayMedias(media);
     displayInfoBar(media, photographer);
-    displayMediasOnePhoto(media);
+    // displayMediasOnePhoto(media);
 
     // evenement qui lance un tri sur les médias
     document.getElementById("filtre").addEventListener('change', function (event) {
