@@ -92,9 +92,7 @@ body{
 
 select{
     border-radius: 5px;
-    height: 35px;
-    width: 120px;
-    padding-left: 10px;
+    padding: 8px ;
     font-weight: bold;
     color: #ffffff;
     background-color: #901C1C;
@@ -199,34 +197,6 @@ form input {
     border-radius: 5px;
 }
 
-#modal-photo{
-    display: none;
-}
-
-.lightbox-modal{
-    display: flex;
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #ffffff;
-    
-}
-.content{
-    margin: 5% auto;
-    justify-content: center;
-    display: flex;
-    height: 100%;
-    width: 85%;
-    border: 2px solid #901C1C;
-}
-.photo-modal{
-    height: 85%;
-    width: 70%;
-}
 
 .photographe_page-infobar{
     display: flex;
@@ -260,9 +230,65 @@ form input {
     margin-left: 100px;
     align-items: center;
     width: 14%;
-    justify-content: space-between;
 }
 
 .text-fitre{
     font-weight: bold;
+    margin-right: 20px;
 }
+
+.modal-ligthbox{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding: 100px 0px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #ffffff;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.close {
+    color: #901C1C;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+}
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 60%;
+    max-width: 1200px;
+}
+.next{
+    right: 20px;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: #901C1C;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .demo{
+      width: 100%;
+  }
