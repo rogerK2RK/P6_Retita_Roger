@@ -10,18 +10,20 @@
   </head>
   <body>
 
-    <header>
-      <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page"/>
+    <header role="banner">
+      <a href="http://127.0.0.1:5500/" role="image link"  alt="Fisheye Home page">
+        <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page"/>
+      </a>
     </header>
 
-    <main id="main">
+    <main id="main" role="main">
       <!-- Information Photographer -->
-      <section class="photographe_page-content"></section>
+      <section role="section" class="photographe_page-content"></section>
       
       <!-- Liste déroulant -->
       <div class="box-filtre">
         <p class="text-fitre">Trier par </p>
-        <select id="filtre">
+        <select id="filtre" aria-label="select navigation">
           <option value="popularite">Popularité</option>
           <option value="date">Date</option>
           <option value="titre">Titre</option>
@@ -29,29 +31,29 @@
       </div>
 
       <!-- Medias du photographer -->
-      <section class="photographe_page_photo-content"></section>
+      <section role="section" class="photographe_page_photo-content"></section>
 
       <!-- InfoBar -->
-      <section class="photographe_page-infobar"></section>
+      <section role="section" class="photographe_page-infobar"></section>
 
     </main>
 
     <!-- La modale de ligthbox -->
-    <section id="lightbox" class="modal-ligthbox">
+    <div id="lightbox" class="modal-ligthbox">
       <span class="close cursor" onclick="closeModalLightBox()">&times;</span>
-      <div class="modal-content">
+      <div class="modal-content" aria-label="image closeup view">
       </div>
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
       <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </section>
+    </div>
     <!-- La modale de contact -->
     <div id="contact_modal">
 			<div class="modal">
 				<header>
-          <h2>Contactez-moi</h2>
+          <h2 class="name-contact"></h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-				<form>
+				<form role="form">
           <div
             class="formData">
             <label for="first">Prénom</label><br>
@@ -82,7 +84,7 @@
               name="email"
             />
           </div>
-          <button class="contact_button">Envoyer</button>
+          <button type="submit" class="contact_button">Envoyer</button>
 				</form>
 			</div>
 		</div>

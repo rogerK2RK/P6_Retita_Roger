@@ -12,19 +12,17 @@ function onePhotoFactory(media) {
         if((/\.(gif|jpg|jpeg|tiff|png)$/i).test(media.image)){
             pht = document.createElement( 'img' );
             pht.setAttribute("src", imagePhoto);
-            pht.setAttribute("onclick","openModal();currentSlide(1)");
         }else{
             pht = document.createElement( 'video' );
             pht.setAttribute("src", videoPhotographer);
             pht.setAttribute("controls","controls");
-            pht.setAttribute("onclick","openModal();currentSlide(1)");
         }
         
         pht.className = "demo";
 
         const titre = document.createElement( 'p' );
         titre.textContent = `${title}`;
-        titre.className = "name-photo";
+        titre.className = "name-photo-lightbox";
 
         article.appendChild(pht);
         article.appendChild(titre);
@@ -43,7 +41,7 @@ function closeModalLightBox() {
     document.getElementById("lightbox").style.display = "none";
 }
 
-
+var slideIndex = 1;
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
@@ -69,5 +67,4 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
-var slideIndex = 1;
 showSlides(slideIndex);

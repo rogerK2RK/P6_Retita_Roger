@@ -9,20 +9,27 @@ function photographersFactory(photographer) {
         link.href = "photographer.html?id="+id;
         link.id = id;
         link.className ="link";
+        link.setAttribute("alt", name);
+
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);
+
         const h2 = document.createElement( 'h2' );
         h2.textContent = name;
+
         const location = document.createElement ( 'p' );
         location.textContent = `${city}, ${country}`;
         location.className = "ville";
+
         const description = document.createElement ( 'p' );
         description.textContent = tagline;
         description.className = "description";
+        
         const prix = document.createElement ( 'p' );
         prix.textContent = `${price}€/jour`;
         prix.className = "tarif";
-        article.appendChild(link)
+        
+        article.appendChild(link);
         link.appendChild(img);
         link.appendChild(h2);
         link.appendChild(location);

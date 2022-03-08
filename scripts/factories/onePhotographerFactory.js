@@ -25,15 +25,20 @@ function onePhotographerFactory(photographer, media) {
         const bouton = document.createElement('button')
         bouton.textContent = "Contactez-moi";
         bouton.className ="contact_button"
+        bouton.setAttribute("aria-label", "Contact Me");
 
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);
+        img.setAttribute("alt", name);
 
         //affiche le formule de contact d'un photographe
         const modalForm = document.getElementById("contact_modal");
         bouton.addEventListener("click", function(e){
             modalForm.style.display = "block";
         })
+
+        const nameCont = document.querySelector(".name-contact");
+        nameCont.textContent = `Contactez-moi ${name}`;
 
         sectionHeadPhotographe.appendChild(contentHeadPhotographe);
         contentHeadPhotographe.appendChild(h1);

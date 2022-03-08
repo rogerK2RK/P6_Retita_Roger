@@ -6,6 +6,8 @@ function photographerMediasFactory(media){
     function getUserCardDOMMedia(){
         const article = document.createElement( 'article' );
         article.className = "photo-box";
+        const link = document.createElement( 'a' );
+        link.setAttribute("href","#");
         
         // verifie si le media est une image ou une video
         let pht;
@@ -19,7 +21,7 @@ function photographerMediasFactory(media){
             pht.setAttribute("controls","controls");
             pht.setAttribute("onclick","openModal();currentSlide(1)");
         }
-        
+        pht.setAttribute("aria-label", title);
         pht.className = "photo";
         const boxeContent = document.createElement( 'div' );
         boxeContent.className = "description-photo";
@@ -34,6 +36,7 @@ function photographerMediasFactory(media){
         let numberLikePhoto = document.createElement( 'p' );
         numberLikePhoto.textContent = likes;
         numberLikePhoto.className = "likes-photo"
+        numberLikePhoto.setAttribute("aria-label", "likes");
 
         const picto = document.createElement( 'i' );
         picto.className = "far fa-heart heart-picto";
@@ -47,7 +50,8 @@ function photographerMediasFactory(media){
             console.log(infobarLikes);
         });
 
-        article.appendChild(pht);
+        article.appendChild(link);
+        link.appendChild(pht);
         article.appendChild(boxeContent);
         boxeContent.appendChild(titre);
         boxeContent.appendChild(boxLike);

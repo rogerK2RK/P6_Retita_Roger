@@ -13,7 +13,12 @@
 body{
     margin: 0px;
 }
-
+header a{
+    height: 50px;
+    margin-left: 100px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
 .logo {
     height: 50px;
     margin-left: 100px;
@@ -240,14 +245,12 @@ form input {
 .modal-ligthbox{
     display: none;
     position: fixed;
-    z-index: 1;
-    padding: 100px 0px;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
     background-color: #ffffff;
+    z-index: 10;
 }
 
 .cursor {
@@ -256,39 +259,38 @@ form input {
 
 .close {
     color: #901C1C;
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    font-size: 35px;
+    position: fixed;
+    top: 50px;
+    right: 150px;
+    font-size: 55px;
     font-weight: bold;
 }
 .modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    width: 60%;
-    max-width: 1200px;
+    margin-right: 200px;
+    margin-left: 200px;
+    margin-top: 50px;
 }
 .next{
-    right: 20px;
+    right: 150px;
 }
-
+.prev{
+    left: 150px;
+}
 .prev, .next {
     cursor: pointer;
-    position: absolute;
-    top: 40%;
-    width: auto;
-    padding: 16px;
-    margin-top: -50px;
+    position: fixed;
+    top: 50%;
     color: #901C1C;
-    font-weight: bold;
-    font-size: 20px;
+    font-size: 40px;
+    z-index: 11;
     transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    -webkit-user-select: none;
   }
   .demo{
       width: 100%;
+      height: 600px;
+      object-fit: contain;
+  }
+  .name-photo-lightbox{
+    color: #901C1C;
+    font-size: 1.4rem;
   }
