@@ -294,3 +294,9 @@ form input {
     color: #901C1C;
     font-size: 1.4rem;
   }
+#formMessage{
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+}
+  

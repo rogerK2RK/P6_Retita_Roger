@@ -9,10 +9,10 @@ function photographersFactory(photographer) {
         link.href = "photographer.html?id="+id;
         link.id = id;
         link.className ="link";
-        link.setAttribute("alt", name);
 
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);
+        img.setAttribute("alt", name);
 
         const h2 = document.createElement( 'h2' );
         h2.textContent = name;
