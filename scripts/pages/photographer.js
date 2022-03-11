@@ -23,10 +23,7 @@ function displayPhotographerInfo(photographer) {
 // function qui appel photographerMediasFactory pour afficher les photos d'un photographe
 function displayMedias(media) {
 
-    // vider l'affichage actuel
-    // const vider = document.querySelector(".photographe_page_photo-content");
-    // vider.pop();
-    // vider.style.display = "none";
+    document.querySelector(".photographe_page_photo-content").innerHTML = "";
 
     media.forEach((media) => {
         const photographerMedia = photographerMediasFactory(media);
@@ -61,19 +58,6 @@ function triMedia(media, ordreTri) {
 
 }
 
-// lightbox
-function displayMediasOnePhoto(media) {
-    media.forEach((media) => {
-        const photographerOnePhoto = onePhotoFactory(media);
-        const userCardDOMPhoto = photographerOnePhoto.getUserPhoto();
-        document.querySelector(".modal-content").appendChild(userCardDOMPhoto);
-    });
-}
-
-
-
-
-  
 async function init() {
     // Récupère les datas des photographes
     const { photographer, media } = await getPhotographer();
@@ -82,13 +66,15 @@ async function init() {
     triMedia(media, "popularite");
     displayMedias(media);
     displayInfoBar(media, photographer);
-    displayMediasOnePhoto(media);
+   
+    initLightbox(media);
 
     // evenement qui lance un tri sur les médias
     document.getElementById("filtre").addEventListener('change', function (event) {
         triMedia(media, event.target.value);
         displayMedias(media);
     });
+
 };
 
 init();

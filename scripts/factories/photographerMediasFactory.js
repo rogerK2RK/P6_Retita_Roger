@@ -47,7 +47,8 @@ function photographerMediasFactory(media){
             numberLikePhoto.textContent = likes+1;
              
             // j'ajoute également 1 au nombre dans l'infobar
-            console.log(infobarLikes);
+            let totalLike = infobarLikes[0].innerHTML;
+            console.log(totalLike);
         });
 
         article.appendChild(link);
