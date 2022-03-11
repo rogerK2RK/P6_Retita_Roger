@@ -42,12 +42,12 @@ function photographerMediasFactory(media){
         picto.className = "far fa-heart heart-picto";
 
         // incrément du like quand on clic dessus
-        let infobarLikes = document.getElementsByClassName("contentTotalLike");
+        let likefromInfoBar = document.getElementsByClassName("contentTotalLike");
         picto.addEventListener("click", function(e){
             numberLikePhoto.textContent = likes+1;
              
             // j'ajoute également 1 au nombre dans l'infobar
-            console.log(infobarLikes);
+            console.log(likefromInfoBar.innerText);
         });
 
         article.appendChild(link);
