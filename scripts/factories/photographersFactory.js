@@ -35,10 +35,6 @@ function photographersFactory(photographer) {
         link.appendChild(location);
         link.appendChild(description);
         link.appendChild(prix);
-            // On récupère l'élément sur lequel on veut détecter le clic
-        link.addEventListener('click', function(e) {          // On écoute l'événement click
-            console.log(id);               // On change le contenu de notre élément pour afficher "C'est cliqué !"
-        });
 
 
         return (article);
