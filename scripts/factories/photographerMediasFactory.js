@@ -20,6 +20,10 @@ function photographerMediasFactory(media){
             pht.setAttribute("src", videoPhotographer);
             pht.setAttribute("controls","controls");
             pht.setAttribute("onclick","openModal();currentSlide(1)");
+            // pht.addEventListener("click", function() {
+            //     openModal();
+            //     currentSlide(1)
+            // })
         }
         pht.setAttribute("aria-label", title);
         pht.className = "photo";
@@ -47,7 +51,7 @@ function photographerMediasFactory(media){
             numberLikePhoto.textContent = likes+1;
              
             // j'ajoute également 1 au nombre dans l'infobar
-            let totalLike = infobarLikes[0].innerHTML;
+            let totalLike = Number(infobarLikes[0].innerHTML);
             console.log(totalLike);
         });
 
