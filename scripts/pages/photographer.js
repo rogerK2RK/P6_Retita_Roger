@@ -1,3 +1,5 @@
+// import { onePhotographerFactory } from "../factories/onePhotographerFactory.js";
+
 async function getPhotographer() {
 
     let searchParams = new URLSearchParams(window.location.search);

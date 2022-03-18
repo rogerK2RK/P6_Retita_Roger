@@ -2,7 +2,7 @@ function photographerMediasFactory(media){
     const {image, title, likes, video } = media;
     const imagePhoto = `assets/photographers/Media/${image}`;
     const videoPhotographer = `assets/photographers/Media/${video}`
-
+    let compteur = 1;
     function getUserCardDOMMedia(){
         const article = document.createElement( 'article' );
         article.className = "photo-box";
@@ -11,15 +11,18 @@ function photographerMediasFactory(media){
         
         // verifie si le media est une image ou une video
         let pht;
+        for(let i = 1 ; i <= media ; i++ ){
+            console.log(i);
+        }
         if((/\.(gif|jpg|jpeg|tiff|png)$/i).test(media.image)){
             pht = document.createElement( 'img' );
             pht.setAttribute("src", imagePhoto);
-            pht.setAttribute("onclick","openModal();currentSlide(1)");
+            pht.setAttribute("onclick",`openModal();currentSlide(${compteur})`);
         }else{
             pht = document.createElement( 'video' );
             pht.setAttribute("src", videoPhotographer);
             pht.setAttribute("controls","controls");
-            pht.setAttribute("onclick","openModal();currentSlide(1)");
+            pht.setAttribute("onclick",`openModal();currentSlide(${compteur})`);
             // pht.addEventListener("click", function() {
             //     openModal();
             //     currentSlide(1)
@@ -47,11 +50,11 @@ function photographerMediasFactory(media){
 
         // incrément du like quand on clic dessus
         let infobarLikes = document.getElementsByClassName("contentTotalLike");
-        picto.addEventListener("click", function(e){
-            numberLikePhoto.textContent = likes+1;
+        picto.addEventListener("click", function(){
+            numberLikePhoto.textContent = likes + 1;
              
             // j'ajoute également 1 au nombre dans l'infobar
-            let totalLike = Number(infobarLikes[0].innerHTML);
+            let totalLike = Number(infobarLikes[0].innerHTML)+1;
             console.log(totalLike);
         });
 
