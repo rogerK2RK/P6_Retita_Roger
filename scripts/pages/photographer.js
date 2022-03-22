@@ -1,4 +1,5 @@
-// import { onePhotographerFactory } from "../factories/onePhotographerFactory.js";
+import { photographerMediasFactory } from "../factories/photographerMediasFactory.js";
+
 
 async function getPhotographer() {
 
@@ -20,7 +21,7 @@ function displayPhotographerInfo(photographer) {
     const photographerModel = onePhotographerFactory(photographer, null);
     const userCardDOM = photographerModel.getUserCardDOM();
     document.querySelector(".photographe_page-content").appendChild(userCardDOM);
-};
+}
 
 // function qui appel photographerMediasFactory pour afficher les photos d'un photographe
 function displayMedias(media) {
@@ -77,6 +78,6 @@ async function init() {
         displayMedias(media);
     });
 
-};
+}
 
 init();

@@ -1,4 +1,4 @@
-function photographerMediasFactory(media){
+export function photographerMediasFactory(media){
     const {image, title, likes, video } = media;
     const imagePhoto = `assets/photographers/Media/${image}`;
     const videoPhotographer = `assets/photographers/Media/${video}`
