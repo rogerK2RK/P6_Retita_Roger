@@ -1,4 +1,4 @@
-function onePhotographerFactory(photographer, media) {
+export function onePhotographerFactory(photographer, media) {
     const { name, portrait, city, country, tagline, price } = photographer;
 
     const picture = `assets/photographers/Photographers ID Photos/${portrait}`;
@@ -33,7 +33,7 @@ function onePhotographerFactory(photographer, media) {
 
         //affiche le formule de contact d'un photographe
         const modalForm = document.getElementById("contact_modal");
-        bouton.addEventListener("click", function(e){
+        bouton.addEventListener("click", function(){
             modalForm.style.display = "block";
         })
 

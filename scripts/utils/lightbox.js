@@ -1,4 +1,4 @@
-function initLightbox(mediaArray) {        
+export function initLightbox(mediaArray) {        
         
     // je boucle sur tous mes médias
     mediaArray.forEach(media => {
@@ -49,7 +49,7 @@ function showSlides(n) {
 
     // si le slide que je veux afficher est avant le premier, alors je reviens au dernier du tableau
     if (n < 1) {slideIndex = slides.length}
-
+    let i;
     // je cache toutes les slides et les médias
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
@@ -63,19 +63,32 @@ function showSlides(n) {
 }
 
 // affiche la lightbox
-function openModal() {
+export function openModal() {
     document.getElementById("lightbox").style.display = "block";
 }
 
 // ferme la lightbox
+let close = document.getElementById("closeLightBox");
+close.addEventListener("click", function(){
+    closeModalLightBox();
+});
+
 function closeModalLightBox() {
     document.getElementById("lightbox").style.display = "none";
 }
+let next = document.getElementById("next");
+next.addEventListener("click", function(){
+    plusSlides(1);
+});
 
+let prev = document.getElementById("prev");
+prev.addEventListener("click", function(){
+    plusSlides(-1);
+});
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
   
-function currentSlide(n) {
+export function currentSlide(n) { 
     showSlides(slideIndex = n);
 }

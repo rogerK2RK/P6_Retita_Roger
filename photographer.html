@@ -40,11 +40,11 @@
 
     <!-- La modale de ligthbox -->
     <div id="lightbox" class="modal-ligthbox">
-      <span class="close cursor" onclick="closeModalLightBox()">&times;</span>
+      <span id="closeLightBox" class="close cursor">&times;</span>
       <div class="modal-content" aria-label="image closeup view">
       </div>
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      <a id="prev" class="prev">&#10094;</a>
+      <a id="next" class="next">&#10095;</a>
     </div>
     <!-- La modale de contact -->
     
@@ -99,11 +99,11 @@
 				</form>
 			</div>
 		</div>
-    <script src="scripts/factories/onePhotographerFactory.js"></script>
+    <!-- <script src="scripts/factories/onePhotographerFactory.js"></script> -->
     <!-- <script src="scripts/factories/photographerMediasFactory.js"></script> -->
-    <script src="scripts/utils/lightbox.js"></script>
-    <script src="scripts/pages/formulaire.js"></script>
+    <!-- <script src="scripts/utils/lightbox.js"></script> -->
+    <!-- <script src="scripts/pages/formulaire.js"></script> -->
     <script src="/scripts/utils/contactForm.js"></script>
-    <script src="scripts/pages/photographer.js"></script>
+    <script type="module" src="scripts/pages/photographer.js"></script>
   </body>
 </html>

@@ -1,5 +1,7 @@
+import {currentSlide, openModal } from "../utils/lightbox.js";
+
 export function photographerMediasFactory(media){
-    const {image, title, likes, video } = media;
+    let {image, title, likes, video } = media;
     const imagePhoto = `assets/photographers/Media/${image}`;
     const videoPhotographer = `assets/photographers/Media/${video}`
     let compteur = 1;
@@ -17,16 +19,20 @@ export function photographerMediasFactory(media){
         if((/\.(gif|jpg|jpeg|tiff|png)$/i).test(media.image)){
             pht = document.createElement( 'img' );
             pht.setAttribute("src", imagePhoto);
-            pht.setAttribute("onclick",`openModal();currentSlide(${compteur})`);
+            // pht.setAttribute("onclick",`openModal();currentSlide(${compteur})`);
+            pht.addEventListener("click", function() {
+                openModal();
+                currentSlide(compteur);
+            });
         }else{
             pht = document.createElement( 'video' );
             pht.setAttribute("src", videoPhotographer);
             pht.setAttribute("controls","controls");
-            pht.setAttribute("onclick",`openModal();currentSlide(${compteur})`);
-            // pht.addEventListener("click", function() {
-            //     openModal();
-            //     currentSlide(1)
-            // })
+            // pht.setAttribute("onclick",`openModal();currentSlide(${compteur})`);
+            pht.addEventListener("click", function() {
+                openModal();
+                currentSlide(1)
+            })
         }
         pht.setAttribute("aria-label", title);
         pht.className = "photo";
@@ -51,13 +57,15 @@ export function photographerMediasFactory(media){
         // incrément du like quand on clic dessus
         let infobarLikes = document.getElementsByClassName("contentTotalLike");
         picto.addEventListener("click", function(){
-            numberLikePhoto.textContent = likes + 1;
+            likes += 1;
+            numberLikePhoto.textContent = likes;
+
              
             // j'ajoute également 1 au nombre dans l'infobar
             let totalLike = Number(infobarLikes[0].innerHTML)+1;
-            console.log(totalLike);
+            infobarLikes[0].textContent = totalLike;
         });
-
+        console.log(compteur);
         article.appendChild(link);
         link.appendChild(pht);
         article.appendChild(boxeContent);
@@ -70,6 +78,6 @@ export function photographerMediasFactory(media){
         return (article);
     }
 
-    return { getUserCardDOMMedia }
+    return { getUserCardDOMMedia,image, title, likes, video }
 }
 

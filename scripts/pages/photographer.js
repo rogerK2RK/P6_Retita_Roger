@@ -1,4 +1,8 @@
 import { photographerMediasFactory } from "../factories/photographerMediasFactory.js";
+import { onePhotographerFactory } from "../factories/onePhotographerFactory.js";
+import { initLightbox } from "../utils/lightbox.js";
+
+let mediaObjList = [];
 
 
 async function getPhotographer() {
@@ -30,6 +34,7 @@ function displayMedias(media) {
 
     media.forEach((media) => {
         const photographerMedia = photographerMediasFactory(media);
+        mediaObjList.push(photographerMedia);
         const userCardDOMMedia = photographerMedia.getUserCardDOMMedia();
         document.querySelector(".photographe_page_photo-content").appendChild(userCardDOMMedia);
     });
@@ -74,8 +79,13 @@ async function init() {
 
     // evenement qui lance un tri sur les médias
     document.getElementById("filtre").addEventListener('change', function (event) {
-        triMedia(media, event.target.value);
-        displayMedias(media);
+        triMedia(mediaObjList, event.target.value);
+        // displayMedias(mediaObjList);
+        document.querySelector(".photographe_page_photo-content").innerHTML = "";
+        mediaObjList.forEach((mediaObj) => {
+            const userCardDOMMedia = mediaObj.getUserCardDOMMedia();
+            document.querySelector(".photographe_page_photo-content").appendChild(userCardDOMMedia);
+        })
     });
 
 }
