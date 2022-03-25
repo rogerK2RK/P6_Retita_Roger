@@ -299,4 +299,8 @@ font-size: 1.4rem;
     border: none;
     border-radius: 5px;
 }
-  
+
+.result{
+    display: flex;
+    color: #901C1C;
+}

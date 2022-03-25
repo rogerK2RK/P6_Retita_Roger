@@ -52,7 +52,7 @@
 			<div class="modal">
 				<header>
           <h2 class="name-contact"></h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img src="assets/icons/close.svg" id="closeModaleContacte" />
         </header>
 				<form role="form">
           <div
@@ -64,7 +64,7 @@
               id="first"
               name="first"
             /><br>
-            <div class="result" id="prenom-validation"></div>
+            <span class="result" id="prenom-validation"></span>
           </div>
           <div
             class="formData">
@@ -74,7 +74,8 @@
               type="text"
               id="last"
               name="last"
-            />
+            /><br>
+            <span class="result" id="nom-validation"></span>
           </div>
           <div
             class="formData">
@@ -84,12 +85,14 @@
               type="email"
               id="email"
               name="email"
-            />
+            /><br>
+            <span class="result" id="email-validation"></span>
           </div>
           <div
             class="formData">
             <label for="message">Votre message</label><br>
-            <textarea name="message" id="formMessage" cols="30" rows="10"></textarea>
+            <textarea name="message" id="formMessage" cols="30" rows="10"></textarea><br>
+            <span class="result" id="message-validation"></span>
           </div>
           <input
             type="submit"

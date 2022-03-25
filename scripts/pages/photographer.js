@@ -31,9 +31,10 @@ function displayPhotographerInfo(photographer) {
 function displayMedias(media) {
 
     document.querySelector(".photographe_page_photo-content").innerHTML = "";
-
+    let compteur = 0;
     media.forEach((media) => {
-        const photographerMedia = photographerMediasFactory(media);
+        compteur++;
+        const photographerMedia = photographerMediasFactory(media, compteur);
         mediaObjList.push(photographerMedia);
         const userCardDOMMedia = photographerMedia.getUserCardDOMMedia();
         document.querySelector(".photographe_page_photo-content").appendChild(userCardDOMMedia);
