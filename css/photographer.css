@@ -292,7 +292,8 @@ form input {
 }
 .name-photo-lightbox{
 color: #901C1C;
-font-size: 1.4rem;
+font-size: 1.6rem;
+margin-top: 0px;
 }
 #formMessage{
     width: 100%;
