@@ -65,6 +65,7 @@ function showSlides(n) {
 // affiche la lightbox
 export function openModal() {
     document.getElementById("lightbox").style.display = "block";
+    document.getElementById("closeLightBox").focus();
 }
 
 // ferme la lightbox

@@ -10,26 +10,19 @@ export function photographerMediasFactory(media, compteur){
         article.className = "photo-box";
         const link = document.createElement( 'a' );
         link.setAttribute("href","#");
-        
+        link.addEventListener("click", function() {
+            openModal();
+            currentSlide(compteur)
+        })
         // verifie si le media est une image ou une video
         let pht;
         if((/\.(gif|jpg|jpeg|tiff|png)$/i).test(media.image)){
             pht = document.createElement( 'img' );
             pht.setAttribute("src", imagePhoto);
-            // pht.setAttribute("onclick",`openModal();currentSlide(${compteur})`);
-            pht.addEventListener("click", function() {
-                openModal();
-                currentSlide(compteur);
-            });
         }else{
             pht = document.createElement( 'video' );
             pht.setAttribute("src", videoPhotographer);
             pht.setAttribute("controls","controls");
-            // pht.setAttribute("onclick",`openModal();currentSlide(${compteur})`);
-            pht.addEventListener("click", function() {
-                openModal();
-                currentSlide(compteur)
-            })
         }
 
         pht.setAttribute("aria-label", title);

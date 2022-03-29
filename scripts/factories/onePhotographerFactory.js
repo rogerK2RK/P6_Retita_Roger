@@ -31,10 +31,12 @@ export function onePhotographerFactory(photographer, media) {
         img.setAttribute("src", picture);
         img.setAttribute("alt", name);
 
+           
         //affiche le formule de contact d'un photographe
         const modalForm = document.getElementById("contact_modal");
         bouton.addEventListener("click", function(){
             modalForm.style.display = "block";
+            document.getElementById("closeModaleContacte").focus();
         })
 
         const nameCont = document.querySelector(".name-contact");
