@@ -92,3 +92,18 @@ function plusSlides(n) {
 export function currentSlide(n) { 
     showSlides(slideIndex = n);
 }
+
+//Accessibiliter au clavier pour la lightbox
+document.addEventListener("keydown", function(event) {
+    if (event.key == "ArrowLeft"){
+        plusSlides(-1);
+    } else  if (event.key == "ArrowRight"){
+        plusSlides(1);
+    } else if(event.keyCode == 27){
+        closeModalLightBox();
+    }
+});
+
+// document.onkeydown = function(e) {
+//     alert(e.key+e.keyCode); // shows k75
+// };

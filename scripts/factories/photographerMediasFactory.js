@@ -46,15 +46,17 @@ export function photographerMediasFactory(media, compteur){
 
         let numberLikePhoto = document.createElement( 'p' );
         numberLikePhoto.textContent = likes;
-        numberLikePhoto.className = "likes-photo"
+        numberLikePhoto.className = "likes-photo";
         numberLikePhoto.setAttribute("aria-label", "likes");
+        const buttonLike = document.createElement( 'button' );
+        buttonLike.className = "buttonLikes";
 
         const picto = document.createElement( 'i' );
         picto.className = "far fa-heart heart-picto";
 
         // incrément du like quand on clic dessus
         let infobarLikes = document.getElementsByClassName("contentTotalLike");
-        picto.addEventListener("click", function(){
+        buttonLike.addEventListener("click", function(){
             likes += 1;
             numberLikePhoto.textContent = likes;
 
@@ -68,7 +70,8 @@ export function photographerMediasFactory(media, compteur){
         boxeContent.appendChild(titre);
         boxeContent.appendChild(boxLike);
         boxLike.appendChild(numberLikePhoto);
-        boxLike.appendChild(picto);
+        buttonLike.appendChild(picto);
+        boxLike.appendChild(buttonLike);
 
 
         return (article);

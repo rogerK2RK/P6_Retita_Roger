@@ -118,3 +118,9 @@ function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
 }
+
+document.addEventListener("keydown", function(event) {
+   if(event.keyCode == 27){
+    closeModal();
+  }
+});
