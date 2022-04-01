@@ -1,7 +1,7 @@
 import {currentSlide, openModal } from "../utils/lightbox.js";
 
 export function photographerMediasFactory(media, compteur){
-    let {image, title, likes, video } = media;
+    let {image, title, likes, video, date } = media;
     const imagePhoto = `assets/photographers/Media/${image}`;
     const videoPhotographer = `assets/photographers/Media/${video}`;
 
@@ -70,6 +70,6 @@ export function photographerMediasFactory(media, compteur){
         return (article);
     }
 
-    return { getUserCardDOMMedia,image, title, likes, video }
+    return { getUserCardDOMMedia,image, title, likes, video, date }
 }
 

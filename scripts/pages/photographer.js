@@ -81,7 +81,7 @@ async function init() {
     // evenement qui lance un tri sur les médias
     document.getElementById("filtre").addEventListener('change', function (event) {
         triMedia(mediaObjList, event.target.value);
-        // displayMedias(mediaObjList);
+        console.log(mediaObjList);
         document.querySelector(".photographe_page_photo-content").innerHTML = "";
         mediaObjList.forEach((mediaObj) => {
             const userCardDOMMedia = mediaObj.getUserCardDOMMedia();
