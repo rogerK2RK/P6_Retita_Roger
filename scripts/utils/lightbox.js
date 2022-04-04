@@ -68,24 +68,28 @@ export function openModal() {
     document.getElementById("closeLightBox").focus();
 }
 
-// ferme la lightbox
+// appèle la function ferme la lightbox au click
 let close = document.getElementById("closeLightBox");
 close.addEventListener("click", function(){
     closeModalLightBox();
 });
 
+// function ferme la lightbox
 function closeModalLightBox() {
     document.getElementById("lightbox").style.display = "none";
 }
+// appèle la function pour passer au slide suivant au click
 let next = document.getElementById("next");
 next.addEventListener("click", function(){
     plusSlides(1);
 });
-
+// appèle la function pour passer au slide precedent au click
 let prev = document.getElementById("prev");
 prev.addEventListener("click", function(){
     plusSlides(-1);
 });
+
+//function pour passer au slide suivant 
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
@@ -105,6 +109,8 @@ document.addEventListener("keydown", function(event) {
     }
 });
 
+
+//function qui perme de connaitre le numéro d'une touche
 // document.onkeydown = function(e) {
 //     alert(e.key+e.keyCode); // shows k75
 // };

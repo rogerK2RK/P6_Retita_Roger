@@ -110,15 +110,19 @@ submitForm.addEventListener("click", function(e){
     return false;
 });
 
+//Appèle la funciton fermer modal au click du croix
 const closeModalContact = document.getElementById("closeModaleContacte");
 closeModalContact.addEventListener("click", function(){
     closeModal();
 });
+
+//function qui ferme le modal
 function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
 }
 
+//Appèle la function fermer le modal avec le bouton echap
 document.addEventListener("keydown", function(event) {
    if(event.keyCode == 27){
     closeModal();

@@ -9,6 +9,7 @@ async function getPhotographers() {
    
 }
 
+// pour chaque photographe va appeler photographersFactory
 async function displayData(photographers) {
 
     photographers.forEach((photographer) => {
