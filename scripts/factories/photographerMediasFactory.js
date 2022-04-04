@@ -22,10 +22,10 @@ export function photographerMediasFactory(media, compteur){
         }else{
             pht = document.createElement( 'video' );
             pht.setAttribute("src", videoPhotographer);
-            pht.setAttribute("controls","controls");
+            // pht.setAttribute("controls","controls");
         }
-
-        pht.setAttribute("aria-label", title);
+        
+        pht.setAttribute("alt", title);
         pht.className = "photo";
         const boxeContent = document.createElement( 'div' );
         boxeContent.className = "description-photo";
