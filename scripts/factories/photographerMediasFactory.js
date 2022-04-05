@@ -22,7 +22,6 @@ export function photographerMediasFactory(media, compteur){
         }else{
             pht = document.createElement( 'video' );
             pht.setAttribute("src", videoPhotographer);
-            // pht.setAttribute("controls","controls");
         }
         
         pht.setAttribute("alt", title);
