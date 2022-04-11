@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <script src="https://kit.fontawesome.com/39ffa7a9ef.js" crossorigin="anonymous"></script>
     <link href="css/photographer.css" rel="stylesheet" type="text/css" />
@@ -10,15 +10,15 @@
   </head>
   <body>
 
-    <header role="banner">
-      <a href="http://127.0.0.1:5500/" role="image link"  alt="Fisheye Home page">
+    <header>
+      <a href="http://127.0.0.1:5500/">
         <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page"/>
       </a>
     </header>
 
-    <main id="main" role="main">
+    <main id="main">
       <!-- Information Photographer -->
-      <section role="section" class="photographe_page-content"></section>
+      <div class="photographe_page-content"></div>
       
       <!-- Liste déroulant -->
       <div class="box-filtre">
@@ -31,17 +31,17 @@
       </div>
 
       <!-- Medias du photographer -->
-      <section role="section" class="photographe_page_photo-content"></section>
+      <div class="photographe_page_photo-content"></div>
 
       <!-- InfoBar -->
-      <section role="section" class="photographe_page-infobar"></section>
+      <div class="photographe_page-infobar"></div>
 
     </main>
 
     <!-- La modale de ligthbox -->
     <div id="lightbox" class="modal-ligthbox">
       <button id="closeLightBox" class="close cursor">&times;</button>
-      <div class="modal-content" aria-label="image closeup view">
+      <div class="modal-content" >
       </div>
       <button id="prev" class="prev">&#10094;</button>
       <button id="next" class="next">&#10095;</button>
@@ -52,7 +52,7 @@
 			<div class="modal">
 				<header>
           <h2 class="name-contact"></h2>
-          <button  id="closeModaleContacte" ><img src="assets/icons/close.svg"/></button>
+          <button  id="closeModaleContacte" ><img alt="icone close" src="assets/icons/close.svg"/></button>
         </header>
 				<form role="form">
           <div

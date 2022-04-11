@@ -55,7 +55,7 @@ const message = document.getElementById("formMessage");
 // Verifie le message passé dans le formulaire
 function checkMessage(){
     let messageResultat = document.getElementById("message-validation");
-    if(/^([a-z]{2,})$/.test(message.value)){
+    if(message.value.length > 2){
         messageResultat.innerText = "";
     }else{
         messageResultat.innerText = "Veuillez entrer votre message !";
@@ -92,7 +92,7 @@ submitForm.addEventListener("click", function(e){
         isValid = false;
     }
 
-    // check du message
+    // // check du message
     let testMessage = checkMessage();
     if(testMessage == false){
         isValid = false;
