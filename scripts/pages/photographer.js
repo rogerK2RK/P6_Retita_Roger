@@ -11,7 +11,7 @@ async function getPhotographer() {
     let id = searchParams.get('id');
 
     // je récupère tous les photographe
-    let dataPhotograph = await fetch('../../data/photographers.json');
+    let dataPhotograph = await fetch('./data/photographers.json');
     dataPhotograph = await dataPhotograph.json();
 
     // je filtre les photographe pour ne récupérer que celui avec le bon id
