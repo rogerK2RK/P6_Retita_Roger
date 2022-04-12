@@ -2,7 +2,7 @@ import { photographersFactory } from "../factories/photographersFactory.js";
 
 async function getPhotographers() {
     
-    let dataPhotograph = await fetch('../../data/photographers.json');
+    let dataPhotograph = await fetch('./data/photographers.json');
     dataPhotograph = await dataPhotograph.json();
     
     return dataPhotograph;
